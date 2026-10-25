@@ -11,9 +11,9 @@
 - How to optimally implement these?
 
 ## Non-Functional Requirements (System Safety & Scale)
-- **No Duplicate Messages:** User should never receive the exact same notification again through the same method.
+- **No Duplicate Messages (NOT IMPLEMENTED):** User should never receive the exact same notification again through the same method.
 - **Smart Retries:** If a message fails to send (e.g., the external email provider is temporarily down), the system should wait and try again. The wait time should increase in each attempt.
-- **Handling Unsendable Messages:** If a message fails completely after several tries (e.g., the user has a fake email address), **the system shouldn't freeze or crash**. It should quietly move that message to a "failed" list to be checked later.
+- **Handling Unsendable Messages (PARTIALLY IMPLEMENTED):** If a message fails completely after several tries (e.g., the user has a fake email address), **the system shouldn't freeze or crash**. It should quietly move that message to a "failed" list to be checked later.
 - **Preventing Overload:** If a product goes viral and 100,000 notifications need to go out at the exact same time, the system must send them at a steady, controlled pace so the external email/text providers don't block us for spamming.
 
 ## Possible Interfaces/Classes
